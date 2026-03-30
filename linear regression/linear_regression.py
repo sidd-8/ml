@@ -6,11 +6,16 @@ class BaseLinearRegression:
         X = self._add_bias(X)
 
         ## Once theta is learned, we return our prediction h(x)
+        if self.theta is None:
+            raise ValueError("No model yet. Call fit() first.")
         return X @ self.theta
 
     def _add_bias(self, X):
         # Add column of 1s for the extra parameter (intercept)
         return np.c_[np.ones((X.shape[0], 1)), X]
+    
+    def get_theta(self):
+        return self.theta
 
 
 class NormalEquationLR(BaseLinearRegression):
@@ -46,18 +51,3 @@ class GradientDescentLR(BaseLinearRegression):
             self.theta -= self.lr * gradient
 
         return self
-    
-
-X = np.array([
-    [8, 8, 9],
-    [2, 0, 1],
-    [5, 5, 5],
-    [9, 6, 10]
-])
-
-y = np.array([95, 15, 54, 96])
-
-model = NormalEquationLR()
-model.fit(X, y)
-preds = model.predict(np.array([[10, 5, 0]]))     # make predictions
-print(preds)
