@@ -25,6 +25,11 @@ and comparison, but not to implement the models themselves.
   - Uniform and inverse-distance weighting
   - Euclidean, Manhattan, and configurable Minkowski distance
   - Multiclass probabilities and direct neighbor inspection
+- Naive Bayes
+  - Gaussian likelihoods for continuous features
+  - Multinomial likelihoods for counts and frequencies
+  - Bernoulli likelihoods with optional feature binarization
+  - Laplace smoothing, custom priors, and stable log-probabilities
 - Evaluation metrics
   - Regression: MSE, RMSE, MAE, MAPE, R-squared, and adjusted R-squared
   - Classification: accuracy, confusion matrix, precision, recall, and F1
@@ -81,6 +86,7 @@ keys are required:
 uv run python -m demos.linear_regression_demo
 uv run python -m demos.logistic_regression_demo
 uv run python -m demos.knn_demo
+uv run python -m demos.naive_bayes_demo
 ```
 
 Each command prints a held-out comparison with scikit-learn and saves diagnostic
@@ -97,3 +103,7 @@ plots under `artifacts/`.
 ### K-nearest-neighbors diagnostics
 
 ![KNN classification and regression demo](artifacts/knn.png)
+
+### Naive Bayes diagnostics
+
+![Naive Bayes likelihood comparison](artifacts/naive_bayes.png)
