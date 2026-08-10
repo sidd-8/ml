@@ -1,3 +1,4 @@
-linear regression/used_car_dataset.csv
-linear regression/sample_test.txt
 **/.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
