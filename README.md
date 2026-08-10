@@ -35,6 +35,16 @@ and comparison, but not to implement the models themselves.
   - Regression with squared-error reduction
   - Depth, leaf-size, feature-sampling, and impurity growth controls
   - Feature importances, leaf identifiers, probabilities, and text export
+- Random forests
+  - Classification and regression ensembles
+  - Bootstrap sampling with per-tree random feature subsets
+  - Out-of-bag predictions and scores
+  - Probability/target averaging and aggregated feature importances
+- Boosting ensembles
+  - Multiclass SAMME AdaBoost with weighted decision stumps
+  - Gradient boosting for binary classification and regression
+  - Learning rates, stochastic subsampling, staged predictions, and early stopping
+  - Estimator diagnostics, training losses, and feature importances
 - Evaluation metrics
   - Regression: MSE, RMSE, MAE, MAPE, R-squared, and adjusted R-squared
   - Classification: accuracy, confusion matrix, precision, recall, and F1
@@ -93,6 +103,8 @@ uv run python -m demos.logistic_regression_demo
 uv run python -m demos.knn_demo
 uv run python -m demos.naive_bayes_demo
 uv run python -m demos.decision_tree_demo
+uv run python -m demos.random_forest_demo
+uv run python -m demos.boosting_demo
 ```
 
 Each command prints a held-out comparison with scikit-learn and saves diagnostic
@@ -117,3 +129,11 @@ plots under `artifacts/`.
 ### Decision tree diagnostics
 
 ![Decision tree classification and regression](artifacts/decision_tree.png)
+
+### Random forest diagnostics
+
+![Random forest ensemble convergence](artifacts/random_forest.png)
+
+### Boosting diagnostics
+
+![AdaBoost and gradient boosting convergence](artifacts/boosting.png)
