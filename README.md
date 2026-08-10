@@ -30,6 +30,11 @@ and comparison, but not to implement the models themselves.
   - Multinomial likelihoods for counts and frequencies
   - Bernoulli likelihoods with optional feature binarization
   - Laplace smoothing, custom priors, and stable log-probabilities
+- Decision trees
+  - Classification with Gini impurity or entropy
+  - Regression with squared-error reduction
+  - Depth, leaf-size, feature-sampling, and impurity growth controls
+  - Feature importances, leaf identifiers, probabilities, and text export
 - Evaluation metrics
   - Regression: MSE, RMSE, MAE, MAPE, R-squared, and adjusted R-squared
   - Classification: accuracy, confusion matrix, precision, recall, and F1
@@ -87,6 +92,7 @@ uv run python -m demos.linear_regression_demo
 uv run python -m demos.logistic_regression_demo
 uv run python -m demos.knn_demo
 uv run python -m demos.naive_bayes_demo
+uv run python -m demos.decision_tree_demo
 ```
 
 Each command prints a held-out comparison with scikit-learn and saves diagnostic
@@ -107,3 +113,7 @@ plots under `artifacts/`.
 ### Naive Bayes diagnostics
 
 ![Naive Bayes likelihood comparison](artifacts/naive_bayes.png)
+
+### Decision tree diagnostics
+
+![Decision tree classification and regression](artifacts/decision_tree.png)
