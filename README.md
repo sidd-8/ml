@@ -20,6 +20,11 @@ and comparison, but not to implement the models themselves.
   - Early stopping and convergence diagnostics
   - Balanced or custom class weights
   - Decision scores, probabilities, and configurable classification threshold
+- K-nearest neighbors
+  - Classification and regression
+  - Uniform and inverse-distance weighting
+  - Euclidean, Manhattan, and configurable Minkowski distance
+  - Multiclass probabilities and direct neighbor inspection
 - Evaluation metrics
   - Regression: MSE, RMSE, MAE, MAPE, R-squared, and adjusted R-squared
   - Classification: accuracy, confusion matrix, precision, recall, and F1
@@ -75,6 +80,7 @@ keys are required:
 ```bash
 uv run python -m demos.linear_regression_demo
 uv run python -m demos.logistic_regression_demo
+uv run python -m demos.knn_demo
 ```
 
 Each command prints a held-out comparison with scikit-learn and saves diagnostic
@@ -87,3 +93,7 @@ plots under `artifacts/`.
 ### Logistic regression diagnostics
 
 ![Logistic regression breast cancer demo](artifacts/logistic_regression.png)
+
+### K-nearest-neighbors diagnostics
+
+![KNN classification and regression demo](artifacts/knn.png)
