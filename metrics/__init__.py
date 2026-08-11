@@ -11,6 +11,7 @@ from .classification import (
     roc_auc_score,
     roc_curve,
 )
+from .clustering import silhouette_score
 from .regression import (
     adjusted_r2_score,
     mean_absolute_error,
@@ -36,4 +37,5 @@ __all__ = [
     "roc_auc_score",
     "roc_curve",
     "root_mean_squared_error",
+    "silhouette_score",
 ]

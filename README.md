@@ -45,6 +45,16 @@ and comparison, but not to implement the models themselves.
   - Gradient boosting for binary classification and regression
   - Learning rates, stochastic subsampling, staged predictions, and early stopping
   - Estimator diagnostics, training losses, and feature importances
+- K-Means clustering
+  - Random and K-Means++ initialization
+  - Multiple restarts with lowest-inertia selection
+  - Convergence diagnostics and empty-cluster recovery
+  - Cluster prediction, center-distance transforms, inertia, and silhouette scoring
+- DBSCAN clustering
+  - Density-connected clusters with explicit noise detection
+  - Core, border, and noise sample diagnostics
+  - Euclidean, Manhattan, and configurable Minkowski neighborhoods
+  - Deterministic cluster expansion without specifying a cluster count
 - Evaluation metrics
   - Regression: MSE, RMSE, MAE, MAPE, R-squared, and adjusted R-squared
   - Classification: accuracy, confusion matrix, precision, recall, and F1
@@ -105,6 +115,8 @@ uv run python -m demos.naive_bayes_demo
 uv run python -m demos.decision_tree_demo
 uv run python -m demos.random_forest_demo
 uv run python -m demos.boosting_demo
+uv run python -m demos.kmeans_demo
+uv run python -m demos.dbscan_demo
 ```
 
 Each command prints a held-out comparison with scikit-learn and saves diagnostic
@@ -137,3 +149,11 @@ plots under `artifacts/`.
 ### Boosting diagnostics
 
 ![AdaBoost and gradient boosting convergence](artifacts/boosting.png)
+
+### K-Means diagnostics
+
+![K-Means clusters and model selection](artifacts/kmeans.png)
+
+### DBSCAN diagnostics
+
+![DBSCAN density clustering and eps selection](artifacts/dbscan.png)
