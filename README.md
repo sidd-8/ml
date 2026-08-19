@@ -20,6 +20,10 @@ and comparison, but not to implement the models themselves.
   - Early stopping and convergence diagnostics
   - Balanced or custom class weights
   - Decision scores, probabilities, and configurable classification threshold
+- Softmax regression
+  - Native multiclass cross-entropy optimization
+  - Batch, mini-batch, and stochastic gradient descent
+  - Stable probabilities, arbitrary labels, L2 regularization, and early stopping
 - K-nearest neighbors
   - Classification and regression
   - Uniform and inverse-distance weighting
@@ -55,6 +59,25 @@ and comparison, but not to implement the models themselves.
   - Core, border, and noise sample diagnostics
   - Euclidean, Manhattan, and configurable Minkowski neighborhoods
   - Deterministic cluster expansion without specifying a cluster count
+- Principal component analysis
+  - SVD-based projection and reconstruction
+  - Fixed component counts or explained-variance targets
+  - Explained variance diagnostics and optional whitening
+- Gaussian mixture models
+  - Expectation-maximization with multiple initializations
+  - Full and diagonal covariance matrices
+  - Soft responsibilities, likelihood scoring, and sampling
+- Agglomerative hierarchical clustering
+  - Single, complete, average, and Ward linkage
+  - Deterministic bottom-up merging with exposed merge trees and distances
+- Support vector machines
+  - Linear and radial-basis kernels fitted with sequential minimal optimization
+  - Binary and one-vs-rest multiclass classification
+  - Support-vector, margin-score, and linear-coefficient diagnostics
+- Multilayer perceptrons
+  - Classification and regression with configurable hidden layers
+  - ReLU, tanh, and sigmoid activations
+  - Mini-batch backpropagation, Adam, L2 regularization, and early stopping
 - Evaluation metrics
   - Regression: MSE, RMSE, MAE, MAPE, R-squared, and adjusted R-squared
   - Classification: accuracy, confusion matrix, precision, recall, and F1
@@ -117,6 +140,12 @@ uv run python -m demos.random_forest_demo
 uv run python -m demos.boosting_demo
 uv run python -m demos.kmeans_demo
 uv run python -m demos.dbscan_demo
+uv run python -m demos.pca_demo
+uv run python -m demos.gmm_demo
+uv run python -m demos.agglomerative_demo
+uv run python -m demos.svm_demo
+uv run python -m demos.softmax_regression_demo
+uv run python -m demos.mlp_demo
 ```
 
 Each command prints a held-out comparison with scikit-learn and saves diagnostic
@@ -157,3 +186,27 @@ plots under `artifacts/`.
 ### DBSCAN diagnostics
 
 ![DBSCAN density clustering and eps selection](artifacts/dbscan.png)
+
+### PCA diagnostics
+
+![PCA projection and explained variance](artifacts/pca.png)
+
+### Gaussian mixture diagnostics
+
+![Gaussian mixture clusters and responsibilities](artifacts/gmm.png)
+
+### Agglomerative clustering diagnostics
+
+![Agglomerative assignments and merge distances](artifacts/agglomerative.png)
+
+### Support vector machine diagnostics
+
+![RBF SVM decision function and support vectors](artifacts/svm.png)
+
+### Softmax regression diagnostics
+
+![Softmax regression training and confidence](artifacts/softmax_regression.png)
+
+### Multilayer perceptron diagnostics
+
+![MLP classification, losses, and regression](artifacts/mlp.png)
